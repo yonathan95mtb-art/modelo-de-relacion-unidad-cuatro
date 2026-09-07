@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nitro Bikes - Modelo Entidad Relación</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>NITRO BIKES</h1>
+        <p>Modelo Entidad-Relación de la Base de Datos</p>
+    </header>
+
+    <main>
+
+        <section class="introduccion">
+            <h2>Contextualización de la empresa NitroBikes</h2>
+
+            <p>La empresa objeto de análisis es NitroBikes, un establecimiento comercial ubicado en la ciudad de
+                Bogotá, dedicado a la comercialización de productos relacionados con el ciclismo. Dentro de su oferta se
+                encuentran bicicletas, accesorios, repuestos, implementos y elementos de indumentaria para los
+                diferentes tipos de usuarios y modalidades del ciclismo.</p>
+
+            <p>Su actividad económica se desarrolla principalmente en el sector comercial y deportivo, orientándose
+                a satisfacer las necesidades de ciclistas aficionados, recreativos y deportivos mediante la
+                disponibilidad de productos especializados para la práctica y mantenimiento de la bicicleta.</p>
+
+            <p>El modelo de negocio de NitroBikes se basa principalmente en la comercialización y distribución directa
+                de sus productos. Cuenta con tienda física para la venta directa y dispone de un canal digital mediante
+                el cual presenta su catálogo y permite realizar compras en línea, ampliando su alcance comercial.</p>
+
+            <p>La empresa también cuenta con mecanismos de distribución y logística para realizar el envío de productos
+                a diferentes lugares del territorio nacional. De esta manera, combina los canales de venta presencial y
+                digital, permitiendo atender clientes de Bogotá y de otras ciudades del país.</p>
+
+            <p>Desde la perspectiva de las bases de datos, las características del modelo de negocio de NitroBikes
+                permiten identificar diferentes procesos susceptibles de ser gestionados mediante un sistema de
+                información, entre ellos el registro de clientes, productos, categorías, proveedores, ventas, detalles
+                de las ventas, inventario y procesos relacionados con la distribución de los productos.</p>
+
+            <p>El análisis de estos procesos permitirá diseñar una base de datos relacional orientada a organizar la
+                información de la empresa y facilitar posteriormente la generación de consultas e indicadores que
+                contribuyan al análisis de las ventas, el comportamiento del inventario y la productividad del negocio.
+            </p>
+
+
+        </section>
+
+        <section class="diagrama">
+
+            <h2>Diagrama Entidad-Relación</h2>
+
+            <div class="modelo">
+                <img src="modelo entidad relacion.png" alt="Modelo Entidad-Relación de Nitro Bikes">
+            </div>
+
+            <section class="descripcion-mer">
+
+                <h2>Descripción del Modelo Entidad-Relación</h2>
+
+
+
+                <p class="introduccion-mer">
+                    El Modelo Entidad-Relación (MER) diseñado para Nitro Bikes representa
+                    la estructura de información necesaria para gestionar los principales
+                    procesos de la empresa, incluyendo proveedores, productos, inventario,
+                    clientes, pedidos, empleados.
+
+                    El modelo permite organizar los datos de manera estructurada,
+                    facilitar las relaciones entre las entidades y mantener la integridad
+                    de la información.
+                </p>
+
+
+            </section>
+
+
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Modelo Relacional - NitroBikes</title> <!-- Conexión con el archivo CSS -->
+            <link rel="stylesheet" href="estilos.css">
+            </head>
+
+            <body> <!-- ENCABEZADO -->
+                <header>
+                    <h1>Modelo Relacional de NitroBikes</h1>
+                    <p>Diseño y estructura de la base de datos</p>
+                </header> <!-- MENÚ -->
+                <nav> <a href="#definiciones">Definiciones</a> <a href="#estructura">Estructura</a> <a
+                        href="#ventajas">Ventajas y desventajas</a> </nav>
+                <main> <!-- ========================= --> <!-- 1.2 DEFINICIONES --> <!-- ========================= -->
+                    <section id="definiciones">
+                        <h2>1.2. Definiciones del modelo relacional en bases de datos</h2>
+                        <p> El modelo relacional es una forma de organizar y almacenar la información de una base de
+                            datos mediante tablas. Este modelo fue propuesto por Edgar Codd en 1970 y permite organizar
+                            los datos de una manera estructurada, donde las filas representan registros y las columnas
+                            representan los atributos de cada registro. </p>
+                        <p> En el caso de NitroBikes, el modelo relacional permite organizar la información relacionada
+                            con los clientes, proveedores, productos, pedidos, empleados y ciudades. De esta manera, la
+                            información se encuentra distribuida en diferentes tablas que se relacionan entre sí
+                            mediante claves primarias y claves foráneas. </p>
+                        <p> Dentro del modelo, una relación corresponde a cada una de las tablas que hacen parte de la
+                            base de datos, como producto, clientes, proveedores o pedidos. Por otra parte, una tupla
+                            corresponde a cada registro almacenado dentro de una tabla, por ejemplo, un cliente, un
+                            producto o un pedido específico. Los atributos son las columnas que describen las
+                            características de cada registro, como el nombre, precio o stock de un producto. </p>
+                        <p> También se encuentra el concepto de dominio, que corresponde al conjunto de valores que
+                            puede tomar un atributo. Por ejemplo, un campo de tipo entero solamente puede almacenar
+                            valores numéricos enteros, mientras que un campo de tipo ENUM tiene una lista de valores
+                            previamente establecidos. </p>
+                        <p> El grado corresponde a la cantidad de atributos o columnas que tiene una tabla. Por ejemplo,
+                            si una tabla cuenta con nueve columnas, su grado es nueve. La cardinalidad, por otro lado,
+                            hace referencia a la cantidad de registros que contiene una tabla en un momento determinado,
+                            como puede ser la cantidad de productos, clientes o pedidos registrados en la base de datos.
+                        </p>
+                        <h3>Llaves del modelo relacional</h3>
+                        <p> Las llaves también son una parte importante del modelo relacional, ya que permiten
+                            identificar los registros y establecer las relaciones entre las diferentes tablas. La llave
+                            primaria permite identificar de manera única cada registro de una tabla. En el modelo de
+                            NitroBikes se encuentran llaves primarias como <code>id_producto</code> en producto,
+                            <code>id_pedido</code> en pedidos, <code>id_cedula</code> en clientes y empleados,
+                            <code>id_ciudad</code> en ciudad e <code>id_detalle_pedido</code> en detalle_pedido.
+                        </p>
+                        <p> La llave foránea es un atributo que permite relacionar una tabla con otra haciendo
+                            referencia a la llave primaria de la tabla relacionada. Por ejemplo, <code>id_ciudad</code>
+                            en clientes y proveedores permite relacionar estas tablas con ciudad. De igual manera,
+                            <code>id_pedido</code> e <code>id_producto</code> en detalle_pedido permiten relacionar el
+                            detalle con los pedidos y los productos.
+                        </p>
+                        <p> Finalmente, en la tabla producto_proveedor se utiliza una llave primaria compuesta, debido a
+                            que está formada por dos atributos. La combinación de <code>proveedores_id_nit</code> y
+                            <code>producto_id_producto</code> permite identificar de manera única cada relación entre un
+                            proveedor y un producto, evitando que se registre dos veces la misma combinación.
+                        </p>
+                        <!-- TARJETAS DE CONCEPTOS -->
+                        <div class="conceptos">
+                            <div class="card">
+                                <h3>Relación</h3>
+                                <p> Corresponde a una tabla de la base de datos, como productos, clientes o proveedores.
+                                </p>
+                            </div>
+                            <div class="card">
+                                <h3>Tupla</h3>
+                                <p> Representa cada registro almacenado dentro de una tabla. </p>
+                            </div>
+                            <div class="card">
+                                <h3>Atributo</h3>
+                                <p> Representa una columna que contiene una característica de los registros. </p>
+                            </div>
+                            <div class="card">
+                                <h3>Dominio</h3>
+                                <p> Es el conjunto de valores permitidos para un atributo. </p>
+                            </div>
+                            <div class="card">
+                                <h3>Grado</h3>
+                                <p> Es la cantidad de columnas que tiene una tabla. </p>
+                            </div>
+                            <div class="card">
+                                <h3>Cardinalidad</h3>
+                                <p> Es la cantidad de registros que contiene una tabla. </p>
+                            </div>
+                        </div>
+                    </section> <!-- ========================= --> <!-- 1.3 ESTRUCTURA -->
+                    <!-- ========================= -->
+                    <section id="estructura">
+                        <h2>1.3. Descripción de la estructura</h2>
+                        <p> El modelo relacional de NitroBikes está compuesto por diferentes tablas que permiten
+                            organizar la información de la empresa. Cada tabla contiene sus respectivos atributos, tipos
+                            de datos y llaves, además de las relaciones que permiten conectar la información entre
+                            ellas. </p>
+                        <p> La tabla ciudad contiene la información relacionada con las ciudades y sirve como referencia
+                            para clientes y proveedores. De esta manera, una ciudad puede estar relacionada con varios
+                            clientes y varios proveedores. La tabla proveedores contiene la información de los
+                            proveedores de NitroBikes, como nombre, portafolio, correo, dirección y teléfono. Además,
+                            cuenta con <code>id_ciudad</code> como llave foránea para relacionar cada proveedor con una
+                            ciudad. </p>
+                        <p> La tabla producto almacena la información de los productos que comercializa la empresa, como
+                            el nombre, precio y stock. Su llave primaria es <code>id_producto</code>. Por otra parte,
+                            producto_proveedor funciona como una tabla intermedia que permite establecer la relación
+                            entre productos y proveedores. </p>
+                        <p> Esto se debe a que un proveedor puede suministrar varios productos y un producto puede ser
+                            suministrado por diferentes proveedores. Por esta razón, esta tabla utiliza
+                            <code>proveedores_id_nit</code> y <code>producto_id_producto</code> como llaves foráneas y
+                            como parte de una llave primaria compuesta.
+                        </p>
+                        <p> La tabla clientes contiene la información de los clientes, como nombre, apellido, correo,
+                            dirección y teléfono. También tiene <code>id_ciudad</code> como llave foránea para
+                            relacionarla con la tabla ciudad. La tabla empleados almacena la información de los
+                            empleados de la empresa, incluyendo nombre, apellido, cargo, correo y teléfono. Su llave
+                            primaria es <code>id_cedula</code>. </p>
+                        <p> La tabla pedidos registra la información general de cada pedido realizado por un cliente. En
+                            ella se encuentran datos como destino, estado, guía de envío, tipo de venta y valor del
+                            pedido. Además, se relaciona con los clientes y empleados mediante sus respectivas llaves
+                            foráneas. </p>
+                        <p> Finalmente, la tabla detalle_pedido contiene la información específica de los productos que
+                            hacen parte de cada pedido. En esta tabla se encuentran datos como cantidad, precio
+                            unitario, <code>id_pedido</code> e <code>id_producto</code>. Esto permite que un pedido
+                            pueda contener varios productos y que un mismo producto pueda aparecer en diferentes
+                            pedidos. </p>
+                        <h3>Reglas de integridad</h3>
+                        <p> El modelo también permite aplicar diferentes reglas de integridad para mantener la
+                            información organizada y evitar errores. La integridad de entidad se establece mediante las
+                            llaves primarias, ya que estas permiten identificar de manera única cada registro y evitar
+                            duplicados. </p>
+                        <p> La integridad referencial se mantiene mediante las llaves foráneas, debido a que estas deben
+                            hacer referencia a registros existentes en las tablas relacionadas. Esto permite mantener
+                            una relación coherente entre los diferentes datos de la base de datos. </p>
+                        <p> Las relaciones uno a muchos son utilizadas en diferentes partes del modelo, como ciudad con
+                            proveedores, ciudad con clientes, clientes con pedidos y producto con detalle_pedido. Esto
+                            significa que un registro de una tabla puede estar relacionado con varios registros de otra
+                            tabla. </p>
+                        <p> También existe una relación muchos a muchos entre proveedores y productos, la cual se
+                            resuelve mediante la tabla intermedia producto_proveedor, permitiendo que un proveedor pueda
+                            suministrar varios productos y que un producto pueda tener varios proveedores. </p>
+                        <p> Un aspecto que se debe tener en cuenta en el modelo es el atributo
+                            <code>valor_pedido</code>, debido a que puede representar información que también se obtiene
+                            a partir de los valores registrados en detalle_pedido. Si este valor corresponde a la suma
+                            de la cantidad por el precio unitario de los productos, se debe procurar que no se generen
+                            inconsistencias por almacenar el mismo dato en diferentes tablas.
+                        </p>
+                    </section> <!-- ========================= --> <!-- 1.4 VENTAJAS -->
+                    <!-- ========================= -->
+                    <section id="ventajas">
+                        <h2>1.4. Ventajas y desventajas de su uso</h2>
+                        <p> El modelo relacional presenta diferentes ventajas para una empresa como NitroBikes,
+                            principalmente porque permite organizar la información de una manera estructurada y
+                            establecer relaciones entre los diferentes datos. </p>
+                        <div class="ventajas">
+                            <h3>Ventajas</h3>
+                            <p> Una de sus principales ventajas es que permite separar la información en diferentes
+                                tablas según su función. Por ejemplo, los clientes, productos y proveedores tienen sus
+                                propias tablas, lo que facilita la organización y el manejo de la información. </p>
+                            <p> Otra ventaja es que permite reducir la repetición de datos. Al utilizar tablas
+                                relacionadas, no es necesario almacenar la misma información varias veces. Por ejemplo,
+                                la información de una ciudad puede encontrarse en una sola tabla y ser utilizada por
+                                diferentes clientes y proveedores mediante una llave foránea. </p>
+                            <p> Esto también ayuda a mantener una mayor integridad de los datos y disminuir la
+                                posibilidad de inconsistencias. </p>
+                            <p> El modelo relacional también facilita la realización de consultas mediante SQL, ya que
+                                es posible obtener información de diferentes tablas. En el caso de NitroBikes se pueden
+                                realizar consultas para conocer los productos disponibles, los pedidos realizados por un
+                                cliente, los productos suministrados por un proveedor o las ventas realizadas en
+                                determinadas ciudades. </p>
+                            <p> Otra ventaja es que facilita el mantenimiento de la información, debido a que los datos
+                                se encuentran organizados en diferentes tablas. Además, las llaves primarias y foráneas
+                                permiten establecer relaciones entre los datos y mantener una estructura más controlada.
+                            </p>
+                        </div>
+                        <div class="desventajas">
+                            <h3>Desventajas</h3>
+                            <p> Sin embargo, el modelo relacional también presenta algunas desventajas. Una de ellas es
+                                que algunas consultas pueden llegar a ser más complejas cuando la información que se
+                                necesita se encuentra distribuida en varias tablas. En estos casos es necesario utilizar
+                                consultas con JOIN para combinar la información. </p>
+                            <p> También es necesario realizar una buena planificación al momento de diseñar la base de
+                                datos. Si las tablas y las relaciones no se diseñan correctamente pueden aparecer datos
+                                repetidos, inconsistencias o problemas al momento de actualizar la información. Por esta
+                                razón, la normalización es importante para conseguir una estructura adecuada. </p>
+                            <p> Otra desventaja es que al aplicar correctamente la normalización pueden aumentar la
+                                cantidad de tablas y relaciones dentro de la base de datos. Aunque esto ayuda a mantener
+                                la información organizada, también puede hacer que el modelo sea un poco más complejo de
+                                entender y administrar. </p>
+                            <p> Finalmente, cuando la cantidad de información aumenta considerablemente, algunas
+                                consultas que utilizan varias tablas pueden requerir una buena optimización para
+                                mantener un buen rendimiento. </p>
+                        </div>
+                        <p> A pesar de estas desventajas, el modelo relacional sigue siendo una opción adecuada para
+                            NitroBikes, ya que permite organizar la información de clientes, productos, proveedores y
+                            pedidos de una manera estructurada y relacionada. </p>
+                    </section>
+                </main> <!-- PIE DE PÁGINA -->
+
+            </body>
+
+</html>
+
+<section class="diagrama">
+    <h2>Tablas de Bases de Datos con SQL Workbench</h2>
+    <h2>Modelo Relacional</h2>
+
+    <p>
+        Diseño de las tablas de bases de datos del modelo relacional bajo el proceso de normalización.
+    </p>
+
+    <div class="contenedor-imagen">
+        <img src="./tablas base de datos NitroBikes.png" alt="Tablas de Bases de Datos Nitro Bikes">
+    </div>
+</section>
+
+
+</body>
+
+</html>
